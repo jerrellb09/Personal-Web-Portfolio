@@ -1,0 +1,29 @@
+body{
+    background-color: rgba(0,0,0,.85);     
+    color:white;
+}
+
+#personal-logo{
+    width: auto;
+}
+
+#personal-banner{
+    /* background-image: url("/img/jbcamerablur.jpg");
+    background-repeat: no-repeat; */
+    /* height: 950px; */
+    margin: auto;
+}
+
+a.nav-link:hover{
+    border-color: transparent transparent limegreen;
+    border-style: solid;
+    color: white;
+    
+}
+
+nav ul li a{
+    color:white;
+}
+
+
+
