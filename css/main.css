@@ -17,15 +17,21 @@ body{
     margin: auto;
 }
 
+
 #whoami{
     margin: auto;
+    height: 600px;
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-size: 3em;
-    height: 980px;
-    background-image: url("/img/jbcamerablur.jpg");
+    color: #FFD700;
+    background-image: url("/img/scenery-1080.jpeg");
     background-repeat: no-repeat;
-    
+}
+
+.responsive{
+    height: auto;
+    width: 100%;
 }
 
 a.nav-link:hover{
