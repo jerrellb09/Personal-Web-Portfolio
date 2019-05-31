@@ -6,6 +6,12 @@ body{
     font-size: 16px;
 }
 
+nav{
+    /* position: fixed !important; */
+    background-color: rgba(0,0,0,.25);
+    box-shadow: 0 0 5px 5px;
+}
+
 #personal-logo{
     width: auto;
 }
@@ -25,8 +31,10 @@ body{
     font-family: 'Roboto Mono', monospace;
     font-size: 3em;
     color: #FFD700;
-    background-image: url("/img/scenery-1080.jpeg");
+    background-image: url("/img/DSC_0200-720.JPG");
     background-repeat: no-repeat;
+    background-position-x: -200px;
+    background-position-y: -200px;
 }
 
 .responsive{
