@@ -7,8 +7,9 @@ body{
 }
 
 nav{
-    /* position: fixed !important; */
+    position: relative !important;
     background-color: rgba(0,0,0,.25);
+    left: 0px !important;
     box-shadow: 0 0 5px 5px;
 }
 
@@ -26,15 +27,17 @@ nav{
 
 #whoami{
     margin: auto;
-    height: 600px;
+    height: 960px;
     text-align: center;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 3em;
-    color: #FFD700;
-    background-image: url("/img/DSC_0200-720.JPG");
+    font-family: 'PT Sans', monospace;
+    font-size: 5em;
+    font-weight: 900;
+    color: cornsilk;
+    background-image: url("/img/DSC_0200.JPG");
     background-repeat: no-repeat;
-    background-position-x: -200px;
-    background-position-y: -200px;
+    background-size: auto;
+    background-position-x: -440px;
+    background-position-y: -300px;
 }
 
 .responsive{
