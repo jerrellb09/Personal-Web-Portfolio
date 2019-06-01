@@ -6,56 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/js/bootstrap.bundle.min.js">
-    <link href="https://fonts.googleapis.com/css?family=Muli|Noto+Sans+KR|PT+Sans|Roboto+Mono|Titillium+Web&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Muli|Noto+Sans+KR|PT+Sans|Roboto+Mono|Titillium+Web&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <title>Home</title>
 </head>
 
 <body class="container-fluid">
+    <div id="personal-banner-wrapper" class="">
+        <div id="personal-banner" class="responsive">
+            <!-- <img class="responsive" src="/img/scenery-1080.jpeg" alt="random scenery"> -->
+        </div>
+        <div id="whoami" class="responsive">
+            <br>
+            <br>
+            <br>
+            <br>
+            J E R R E L L
+        </div>
+    </div>
 
-        <div id="personal-banner-wrapper" class="">
-                <div id="personal-banner" class="responsive">
-                    <!-- <img class="responsive" src="/img/scenery-1080.jpeg" alt="random scenery"> -->
-                </div>
-                <div id="whoami" class="responsive">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    J E R R E L L
-                </div>
-            </div>
 
-    <nav class="navbar navbar-expand-lg">
-
-        <a href="#Home" class="navbar-brand">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <a href="#Home" class="navbar-brand"> -->
             <!-- <img id="personal-logo" src="/img/personal logo/jaybee-logov2.png" alt="jay tek logo"> -->
             <!-- <img src="/img/personal logo/bee-logo-20.png" alt="" id="personal-logo"> -->
-        </a>
+        <!-- </a> -->
 
-        <div class="collapse navbar-collapse flex-grow-1 text-right">
-                <ul class="navbar-nav flex-nowrap">
-                        <li class="nav-item active">
-                            <a href="" class="nav-link">HOME <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="" class="nav-link">ABOUT</a> <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="" class="nav-link">PORTFOLIO <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="" class="nav-link">CONTACT <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-                    </div>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a href="" class="nav-link">HOME<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="" class="nav-link">ABOUT</a> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="" class="nav-link">PORTFOLIO <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="" class="nav-link">CONTACT <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    
     <div class="container-fluid container">
         <section id="welcome-section">
-            <h1>Welcome to my Webfolio</h1>
+            <h1>About Me</h1>
+            <div class="row">
+                        <article class="col-sm-8 box about">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec eu venenatis diam.
+                            Donec
+                            tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus fringilla gravida. Nullam
+                            dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed efficitur ligula
+                            neque,
+                            vel vehicula risus consequat vel.
+                        </article>
+                        <article class="col-sm-8 box rating"></article>
+
+            </div>
         </section>
         <section id="projects">
             <h1>Projects</h1>
@@ -67,6 +82,16 @@
             <h1>Contact</h1>
         </section>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 </body>

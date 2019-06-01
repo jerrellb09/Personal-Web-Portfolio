@@ -1,16 +1,43 @@
 
+html, body{
+    margin: 0 !important;
+    padding: 0 !important; 
+}
 
 body{
     background-color: rgba(0,0,0,.85);     
     color:white;
     font-size: 16px;
 }
+h1{
+    font-family: 'PT Sans', monospace;
+    font-weight: bold;
+    text-align: center;
+    color: cornsilk;
+}
 
 nav{
     position: relative !important;
     background-color: rgba(0,0,0,.25);
     left: 0px !important;
-    box-shadow: 0 0 5px 5px;
+    box-shadow: 0 0 5px 5px cornsilk;
+}
+
+section{
+    top: 500px !important;
+}
+
+.box{
+    border: 1px solid;
+}
+
+.nav-container{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* width: auto; */
+    /* height: 100%; */
+    z-index: 999;
 }
 
 #personal-logo{
@@ -35,8 +62,7 @@ nav{
     color: cornsilk;
     background-image: url("/img/DSC_0200.JPG");
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position-x: -440px;
+    background-position-x: -480px;
     background-position-y: -300px;
 }
 
