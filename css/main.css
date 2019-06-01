@@ -9,6 +9,16 @@ body{
     color:white;
     font-size: 16px;
 }
+
+form{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+input{
+    width: calc(100%-200%);
+}
+
 h1{
     font-family: 'PT Sans', monospace;
     font-weight: bold;
@@ -23,21 +33,23 @@ nav{
     box-shadow: 0 0 5px 5px cornsilk;
 }
 
-section{
-    top: 500px !important;
-}
+/* section > h1{
+    text-align: center;
+} */
 
 .box{
-    border: 1px solid;
+    border: 1px transparent;
 }
 
 .nav-container{
     position: relative;
     top: 0px;
     left: 0px;
-    /* width: auto; */
-    /* height: 100%; */
     z-index: 999;
+}
+
+.whoami-row{
+    height: 100vh;
 }
 
 #personal-logo{
@@ -45,17 +57,14 @@ section{
 }
 
 #personal-banner{
-    /* background-image: url("/img/jbcamerablur.jpg");
-    background-repeat: no-repeat; */
-    /* height: 950px; */
     margin: auto;
 }
 
 
 #whoami{
     margin: auto;
-    height: 960px;
-    text-align: center;
+    height: 100vh;
+    /* text-align: center; */
     font-family: 'PT Sans', monospace;
     font-size: 5em;
     font-weight: 900;
@@ -66,6 +75,16 @@ section{
     background-position-y: -300px;
 }
 
+.whoami-name{
+    /* position: relative; */
+    text-align: center;
+    font-size: 6vw;
+}
+
+/* #whoami > .name .responsive{
+    position: fixed;
+} */
+
 .responsive{
     height: auto;
     width: 100%;
@@ -74,8 +93,7 @@ section{
 a.nav-link:hover{
     border-color: transparent transparent #FFD700;
     border-style: solid;
-    color: white;
-    
+    color: white;    
 }
 
 nav ul li a{

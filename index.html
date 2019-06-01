@@ -18,15 +18,19 @@
         <div id="personal-banner" class="responsive">
             <!-- <img class="responsive" src="/img/scenery-1080.jpeg" alt="random scenery"> -->
         </div>
-        <div id="whoami" class="responsive">
-            <br>
-            <br>
-            <br>
-            <br>
-            J E R R E L L
+        <div class="whoami-row row">
+            <div class="col-sm-12">
+                <div id="whoami" class="">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="whoami-name col-sm-12"> J E R R E L L</div>
+                    <!-- whomami-name col-sm-12 responsive -->
+                </div>
+            </div>
         </div>
     </div>
-
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
@@ -34,8 +38,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- <a href="#Home" class="navbar-brand"> -->
-            <!-- <img id="personal-logo" src="/img/personal logo/jaybee-logov2.png" alt="jay tek logo"> -->
-            <!-- <img src="/img/personal logo/bee-logo-20.png" alt="" id="personal-logo"> -->
+        <!-- <img id="personal-logo" src="/img/personal logo/jaybee-logov2.png" alt="jay tek logo"> -->
+        <!-- <img src="/img/personal logo/bee-logo-20.png" alt="" id="personal-logo"> -->
         <!-- </a> -->
 
         <div class="collapse navbar-collapse" id="navbarToggler">
@@ -57,30 +61,96 @@
     </nav>
 
     <div class="container-fluid container">
-        <section id="welcome-section">
-            <h1>About Me</h1>
-            <div class="row">
-                        <article class="col-sm-8 box about">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec eu venenatis diam.
-                            Donec
-                            tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus fringilla gravida. Nullam
-                            dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed efficitur ligula
-                            neque,
-                            vel vehicula risus consequat vel.
-                        </article>
-                        <article class="col-sm-8 box rating"></article>
+        <div class="row">
+            <section id="welcome-section"  class="col-lg-12">
+                <h1>About Me</h1>
+                <div class="row">
+                    <article class="col-sm-6 box about">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
+                        eu
+                        venenatis diam.
+                        Donec
+                        tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus
+                        fringilla
+                        gravida. Nullam
+                        dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed
+                        efficitur ligula
+                        neque,
+                        vel vehicula risus consequat vel.
+                    </article>
+                    <article class="col-sm-6 box rating">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
+                        eu
+                        venenatis diam.
+                        Donec
+                        tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus
+                        fringilla
+                        gravida. Nullam
+                        dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed
+                        efficitur ligula
+                        neque,
+                        vel vehicula risus consequat vel.
+                    </article>
+                </div>
+            </section>
+        </div>
 
-            </div>
-        </section>
-        <section id="projects">
-            <h1>Projects</h1>
-            <article class="project-tile">
-                <h2>Technical Documentation</h1>
-            </article>
-        </section>
-        <section id="contact">
-            <h1>Contact</h1>
-        </section>
+        <div class="row">
+            <section id="projects"  class="col-lg-12">
+                <h1>Projects</h1>
+                <div class="row">
+                    <article class="col-sm-6 project-tile">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
+                        eu
+                        venenatis diam.
+                        Donec
+                        tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus
+                        fringilla
+                        gravida. Nullam
+                        dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed
+                        efficitur ligula
+                        neque,
+                        vel vehicula risus consequat vel.
+                    </article>
+                    <article class="col-sm-6 project-tile">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
+                        eu
+                        venenatis diam.
+                        Donec
+                        tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus
+                        fringilla
+                        gravida. Nullam
+                        dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed
+                        efficitur ligula
+                        neque,
+                        vel vehicula risus consequat vel.
+                    </article>
+
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <section id="contact"  class="col-lg-12">
+                <h1>Contact</h1>
+                <div class="row">
+                    <form action="" method="POST">
+                        <label for="Name">
+                            <strong>First Name</strong>
+                        </label>
+                        <input type="text" name="first-name">
+                        <label for="Name">
+                            <strong>Last Name</strong>
+                        </label>
+                        <input type="text" name="last-name">
+                        <label for="Name">
+                            <strong>Email Address</strong>
+                        </label>
+                        <input type="text" name="email">
+
+                    </form>
+                </div>                
+            </section>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
