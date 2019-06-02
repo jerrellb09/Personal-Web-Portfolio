@@ -15,6 +15,27 @@ form{
     grid-template-columns: 200px 1fr;
 }
 
+.container-fluid.container{
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid{
+    margin: 0 !important;
+    padding: 0;
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+  
+}
+
+.form-row{
+    justify-content: center;
+
+}
+
 input{
     width: calc(100%-200%);
 }
@@ -31,6 +52,10 @@ nav{
     background-color: rgba(0,0,0,.25);
     left: 0px !important;
     box-shadow: 0 0 5px 5px cornsilk;
+}
+
+section > h1{
+    padding: 25px 50px 25px 50px;
 }
 
 /* section > h1{
@@ -70,13 +95,13 @@ nav{
     font-weight: 900;
     color: cornsilk;
     background-image: url("/img/DSC_0200.JPG");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position-x: -480px;
     background-position-y: -300px;
 }
-
-.whoami-name{
-    /* position: relative; */
+#whoami > .whoami-name{
+    position: static;;
     text-align: center;
     font-size: 6vw;
 }
@@ -89,6 +114,11 @@ nav{
     height: auto;
     width: 100%;
 }
+
+.sec-row{
+    padding: 100px 100px 100px 100px;
+}
+
 
 a.nav-link:hover{
     border-color: transparent transparent #FFD700;
