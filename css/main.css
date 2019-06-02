@@ -25,15 +25,17 @@ form{
     padding: 0;
 }
 
-.container{
-    margin: 0;
-    padding: 0;
-  
-}
-
 .form-row{
     justify-content: center;
 
+}
+
+.nav-sticky{
+  position: fixed !important;
+  top: 0 !important;
+  width: 100%;
+  background-color: rgba(51, 107, 135, 1) !important;
+  z-index: 1;
 }
 
 input{
