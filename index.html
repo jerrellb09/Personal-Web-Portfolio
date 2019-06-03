@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link
-        href="https://fonts.googleapis.com/css?family=Muli|Noto+Sans+KR|PT+Sans|Roboto+Mono|Titillium+Web&display=swap"
+        href="https://fonts.googleapis.com/css?family=Muli|Montserrat|Noto+Sans+KR|PT+Sans|Roboto+Mono|Titillium+Web&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <title>Home</title>
@@ -62,7 +62,7 @@
 
     <div class="container-fluid">
         <div class="sec-row row">
-            <section id="welcome-section"  class="col-lg-12">
+            <section id="welcome-section" class="col-lg-12">
                 <h1>About Me</h1>
                 <div class="row">
                     <article class="col-sm-6 box about">
@@ -96,10 +96,10 @@
         </div>
 
         <div class="sec-row row">
-            <section id="projects"  class="col-lg-12">
+            <section id="projects" class="col-lg-12">
                 <h1>Projects</h1>
                 <div class="row">
-                    <article class="col-sm-6 project-tile">
+                    <article class="col-sm-12 col-lg-6 project-tile">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
                         eu
                         venenatis diam.
@@ -112,7 +112,7 @@
                         neque,
                         vel vehicula risus consequat vel.
                     </article>
-                    <article class="col-sm-6 project-tile">
+                    <article class="col-sm-12 col-lg-6 project-tile">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
                         eu
                         venenatis diam.
@@ -129,26 +129,39 @@
                 </div>
             </section>
         </div>
-        <div class="sec-row row">
-            <section id="contact"  class="col-lg-12">
+        <div class="container">
+            <div class="sec-row">
+            <section id="contact" class="">
                 <h1>Contact</h1>
-                <div class="form-row row">
-                    <form action="" method="POST">
-                        <label for="Name">
-                            <strong>First Name</strong>
-                        </label>
-                        <input type="text" name="first-name">
-                        <label for="Name">
-                            <strong>Last Name</strong>
-                        </label>
-                        <input type="text" name="last-name">
-                        <label for="Name">
-                            <strong>Email Address</strong>
-                        </label>
-                        <input type="text" name="email">
-
+                <div class="">
+                    <form action="" method="" target="">
+                        <ul class="flex-outer">
+                            <li>
+                                <label for="Name">
+                                    First Name
+                                </label>
+                                <input type="text" name="first-name">
+                            </li>
+                            <li>
+                                <label for="Name">
+                                    Last Name
+                                </label>
+                                <input type="text" name="last-name">
+                            </li>
+                            <li>
+                                <label for="Name">
+                                    Email Address
+                                </label>
+                                <input type="email" name="email">
+                            </li>
+                            <li>
+                                <button type="submit" id="submit">Submit</button>
+                            </li>
+                        </ul>
                     </form>
-                </div>                
+                                </div>
+
+                </div>
             </section>
         </div>
     </div>
@@ -162,7 +175,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-        <script src="/js/app.js"></script>
+    <script src="/js/app.js"></script>
 
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 </body>

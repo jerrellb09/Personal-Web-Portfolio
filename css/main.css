@@ -10,10 +10,10 @@ body{
     font-size: 16px;
 }
 
-form{
-    display: grid;
-    grid-template-columns: 200px 1fr;
+article{
+    font-family: 'Montserrat', sans-serif;
 }
+
 
 .container-fluid.container{
     margin: 0;
@@ -38,9 +38,9 @@ form{
   z-index: 1;
 }
 
-input{
+/* input{
     width: calc(100%-200%);
-}
+} */
 
 h1{
     font-family: 'PT Sans', monospace;
@@ -108,9 +108,7 @@ section > h1{
     font-size: 6vw;
 }
 
-/* #whoami > .name .responsive{
-    position: fixed;
-} */
+
 
 .responsive{
     height: auto;
@@ -131,6 +129,46 @@ a.nav-link:hover{
 nav ul li a{
     color:white;
 }
+
+/*Form styling */
+
+/* form{
+    display: grid;
+    grid-template-areas: 
+    "customer customer"
+    "submit";
+    grid-template-columns: 200px 1fr;
+    grid-gap: 1em;
+} */
+
+.flex-outer li
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-outer > li > label {
+  flex: 1 0 120px;
+  max-width: 200px;
+}
+ 
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 180px;
+}
+
+.flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 10px;
+}
+
 
 
 
