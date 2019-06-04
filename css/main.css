@@ -15,15 +15,24 @@ article{
 }
 
 
+
+
 .container-fluid.container{
     margin: 0;
     padding: 0;
 }
 
+
 .container-fluid{
     margin: 0 !important;
     padding: 0;
 }
+
+.container-fluid > .container, .container{
+    width: 100%;
+    background-color: gray !important;
+}
+
 
 .form-row{
     justify-content: center;
@@ -51,7 +60,7 @@ h1{
 
 nav{
     position: relative !important;
-    background-color: rgba(0,0,0,.25);
+    background-color: rgba(0, 0, 0, 0.25);
     left: 0px !important;
     box-shadow: 0 0 5px 5px cornsilk;
 }
@@ -125,6 +134,36 @@ section > h1{
     padding: 100px 100px 100px 100px;
 }
 
+.social-media-links{
+    position: fixed;
+    right: 3vh;
+    top: 50%;
+    background-color:beige;
+    height: auto;
+    width: 6vw;
+    text-align: center;
+    z-index: 2;
+    
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 5vw;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
 
 a.nav-link:hover{
     border-color: transparent transparent #FFD700;
@@ -136,16 +175,9 @@ nav ul li a{
     color:white;
 }
 
-/*Form styling */
+/* - - -Form styling- - -  */
 
-/* form{
-    display: grid;
-    grid-template-areas: 
-    "customer customer"
-    "submit";
-    grid-template-columns: 200px 1fr;
-    grid-gap: 1em;
-} */
+
 
 .flex-outer li
 {
