@@ -1,12 +1,13 @@
 
 html, body{
     margin: 0 !important;
-    padding: 0 !important; 
+    padding: 0 !important;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body{
-    background-color: rgba(0,0,0,.85);     
-    color:white;
+    /* background-color: rgba(0,0,0,.85);      */
+    color: black;
     font-size: 16px;
 }
 
@@ -28,11 +29,6 @@ article{
     padding: 0;
 }
 
-.container-fluid > .container, .container{
-    width: 100%;
-    background-color: gray !important;
-}
-
 
 .form-row{
     justify-content: center;
@@ -43,38 +39,40 @@ article{
   position: fixed !important;
   top: 0 !important;
   width: 100%;
-  background-color: rgba(51, 107, 135, 1) !important;
+  background-color: rgba(0, 0, 0, .20) !important;
   z-index: 1;
 }
 
-/* input{
-    width: calc(100%-200%);
-} */
 
 h1{
     font-family: 'PT Sans', monospace;
     font-weight: bold;
     text-align: center;
-    color: cornsilk;
+    color: lightgray;
 }
 
 nav{
     position: relative !important;
     background-color: rgba(0, 0, 0, 0.25);
     left: 0px !important;
-    box-shadow: 0 0 5px 5px cornsilk;
+    box-shadow: 2px 5px 2px #888888;
 }
 
 section > h1{
     padding: 25px 50px 25px 50px;
 }
 
-/* section > h1{
-    text-align: center;
-} */
+.box-shadow{
+        box-shadow: 5px 10px 8px #888888;
+}
 
 .box{
     border: 1px transparent;
+}
+
+.contact-form{
+    width: 100vw;
+    background-color: #7f8c8d;
 }
 
 .nav-container{
@@ -84,8 +82,15 @@ section > h1{
     z-index: 999;
 }
 
+nav > ul {
+    justify-items: right;
+}
+
 .whoami-row{
     height: 100vh;
+}
+#contact{
+    background-color: aliceblue
 }
 
 #personal-logo{
@@ -97,7 +102,7 @@ section > h1{
 }
 
 
-#whoami{
+#jumbotron{
     height: 100vh;
     font-family: 'PT Sans', monospace;
     font-size: 5em;
@@ -106,32 +111,20 @@ section > h1{
     background-image: url("/img/DSC_0200.JPG");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position-x: -480px;
-    background-position-y: -300px;
+    background-size: cover;
+    background-position: center;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
-
-    
 }
 
 .whoami-name{
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%); */
     align-self: center;
 }
-
-
-
 .responsive{
     height: auto;
     width: 100%;
-}
-
-.sec-row{
-    padding: 100px 100px 100px 100px;
 }
 
 .social-media-links{
