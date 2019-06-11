@@ -5,12 +5,12 @@ var distance = $('nav').offset().top,
 $window.scroll(function () {
     if ($window.scrollTop() >= distance - 1) {
         $('nav').addClass('nav-sticky')
-        $('.social-media-links').show()
+        // $('.social-media-links').show()
 
     }
     else {
         $('nav').removeClass('nav-sticky')
-        $('.social-media-links').hide()
+        // $('.social-media-links').hide()
     }
 });
 

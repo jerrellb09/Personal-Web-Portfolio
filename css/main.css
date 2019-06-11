@@ -15,32 +15,34 @@ article{
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
-
-.container-fluid.container{
-    margin: 0;
-    padding: 0;
-}
-
-
-.container-fluid{
-    margin: 0 !important;
-    padding: 0;
-}
-
-
 .form-row{
     justify-content: center;
 
 }
 
+/*----------Header----------*/
+
+header{
+}
+
+/*----------Navigation----------*/
+
+nav{
+    position: relative !important;
+    left: 0px !important;
+    /* box-shadow: 2px 5px 2px #888888; */
+}
+
 .nav-sticky{
+  /* background-color: black; */
   position: fixed !important;
   top: 0 !important;
   width: 100%;
-  background-color: rgba(0, 0, 0, .20) !important;
   z-index: 1;
+}
+
+.nav-transparent{
+    background-color: transparent !important;
 }
 
 
@@ -48,15 +50,12 @@ h1{
     font-family: 'PT Sans', monospace;
     font-weight: bold;
     text-align: center;
-    color: lightgray;
+    color: blanchedalmond;
 }
 
-nav{
-    position: relative !important;
-    background-color: rgba(0, 0, 0, 0.25);
-    left: 0px !important;
-    box-shadow: 2px 5px 2px #888888;
-}
+
+
+
 
 section > h1{
     padding: 25px 50px 25px 50px;
@@ -89,9 +88,6 @@ nav > ul {
 .whoami-row{
     height: 100vh;
 }
-#contact{
-    background-color: aliceblue
-}
 
 #personal-logo{
     width: auto;
@@ -114,7 +110,6 @@ nav > ul {
     background-size: cover;
     background-position: center;
     text-align: center;
-    width: 100vw;
     display: flex;
     justify-content: center;
 }
@@ -169,7 +164,14 @@ nav ul li a{
     color:white;
 }
 
-/* - - -Form styling- - -  */
+/*----------Contact Form----------*/
+
+#contact{
+    background-color: lightgrey;
+}
+
+
+/*----------Form styling----------*/
 
 
 
@@ -199,6 +201,12 @@ nav ul li a{
   text-transform: uppercase;
   letter-spacing: .09em;
   border-radius: 10px;
+}
+
+/* footer */
+
+footer{
+    background-color:black;
 }
 
 

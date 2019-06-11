@@ -18,14 +18,10 @@
 <!-- jumbotron -->
 
 <body class="container-fluid">
-    <div class="whoami-row whoami-container row">
-            <div id="jumbotron" class="">
-                    <div id="name" class="responsive col-sm-12"></div>
-            </div>        
-            </div>
 
-    <!-- Main Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <header>
+ <!-- Main Navigation -->
+ <nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand" href="#">Jerrell Boone</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
             aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,11 +49,22 @@
             </ul>
         </div>
     </nav>
+    </header>
+
+    <div id="jumbotron" class="">
+        <div id="name" class="responsive"></div>
+    </div>
+
+
+
+   
 
 
     <section id="about" class="pt-5 pb-5">
+        <div class="sectionTitle">
+                <h1>About Me</h1>
+        </div>
         <div class="container">
-            <h1>About Me</h1>
             <div class="row">
                 <article class="col-sm-6 box box-shadow about">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
@@ -125,39 +132,54 @@
     </section>
 
     <section id="contact" class="pt-5 pb-5">
-        <div class="container">
-            <h1>Contact</h1>
-            <form action="" method="" target="" class="col-lg-6">
-                <ul class="flex-outer">
-                    <li>
-                        <label for="Name">
-                            First Name
-                        </label>
-                        <input type="text" name="first-name">
-                    </li>
-                    <li>
-                        <label for="Name">
-                            Last Name
-                        </label>
-                        <input type="text" name="last-name">
-                    </li>
-                    <li>
-                        <label for="Name">
-                            Email Address
-                        </label>
-                        <input type="email" name="email">
-                    </li>
-                    <li>
-                        <button type="submit" id="submit">Submit</button>
-                    </li>
-                </ul>
-            </form>
-            <div class="social-media-links">
-                <a href="#" class="fa fa-linkedin"></a>
-                <a href="#" class="fa fa-instagram"></a>
+        <div class="">
+            <div class="">
+                <h1>Contact</h1>
+                <form action="" method="" target="" class="col-lg-6">
+                    <ul class="flex-outer">
+                        <li>
+                            <label for="Name">
+                                First Name
+                            </label>
+                            <input type="text" name="first-name">
+                        </li>
+                        <li>
+                            <label for="Name">
+                                Last Name
+                            </label>
+                            <input type="text" name="last-name">
+                        </li>
+                        <li>
+                            <label for="Name">
+                                Email Address
+                            </label>
+                            <input type="email" name="email">
+                        </li>
+                        <li>
+                            <button type="submit" id="submit">Submit</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div>
+                    Copyright Jerrell Boone
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <div class="social-media-links">
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div> -->
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
