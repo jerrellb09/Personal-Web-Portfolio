@@ -137,7 +137,7 @@
         <div class="">
             <div class="">
                 <h1>Contact</h1>
-                <form action="" name="contact-form" method="POST" target="" class="col-lg-6" data-netlify="true">
+                <form action="" name="contact-form" method="POST" netlify-honeypot="bot-field" target="" class="col-lg-6" data-netlify="true">
                     <ul class="flex-outer">
                         <li>
                             <label for="Name">
@@ -156,6 +156,12 @@
                                 Email Address
                             </label>
                             <input type="email" name="email">
+                        </li>
+                        <li>
+                            <label for="Message">
+                                Message
+                            </label>
+                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
                         </li>
                         <li>
                             <button type="submit" id="submit">Submit</button>
