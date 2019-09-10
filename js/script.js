@@ -23,6 +23,8 @@ var speed = 100;
 var typewriter = (function typeWriter() {
     var name = document.getElementById("name");
     name.classList.add("whoami-name");
+    name.style.zIndex = '2';
+
 
     if (i < txt.length) {
         document.getElementById("name").innerHTML += txt.charAt(i);

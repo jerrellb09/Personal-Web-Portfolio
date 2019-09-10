@@ -27,6 +27,15 @@ header{
 
 /*----------Navigation----------*/
 
+canvas {
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    
+  }
+
 nav{
     position: relative !important;
     left: 0px !important;
@@ -104,7 +113,7 @@ nav > ul {
     font-size: 5em;
     font-weight: 900;
     color: cornsilk;
-    background-image: url("/img/DSC_0200.JPG");
+    /* background-image: url("/img/DSC_0200.JPG"); */
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
