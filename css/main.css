@@ -173,6 +173,15 @@ nav ul li a{
     color:white;
 }
 
+/*----------Projects----------*/
+
+
+#sig-gen-snip{
+    width: 75%;
+    height: 300px;
+}
+
+
 /*----------Contact Form----------*/
 
 #contact{
