@@ -4,194 +4,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web Developer and freelance photographer at your service! Looking for pictures of your
-    graduation, birthday, outdoor portraits please contact me" />
+    <meta name="description" content="Jerrell Boone - Software Engineer & Web Developer - Personal Portfolio">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Muli|Montserrat|Noto+Sans+KR|Source+Sans+Pro|Roboto+Condensed|PT+Sans|Roboto+Mono|Titillium+Web&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/main.css">
-
-    <title>Jerrell Boone | Web Developer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Jerrell Boone | Software Engineer</title>
 </head>
 
-<!-- jumbotron -->
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
 
-<body class="container-fluid">
-
-    <header>
- <!-- Main Navigation -->
- <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#">Jerrell Boone</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <a href="#Home" class="navbar-brand"> -->
-        <!-- <img id="personal-logo" src="/img/personal logo/jaybee-logov2.png" alt="jay tek logo"> -->
-        <!-- <img src="/img/personal logo/bee-logo-20.png" alt="" id="personal-logo"> -->
-        <!-- </a> -->
-
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a href="" class="nav-link">HOME<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a href="#about" class="nav-link">ABOUT</a> <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a href="#projects" class="nav-link">PORTFOLIO<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a href="#contact" class="nav-link">CONTACT <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/personal logo/jaybee-logov2.png" alt="JB Logo" class="logo-img">
+                <span>Jerrell Boone</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">SKILLS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">PROJECTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-    </header>
 
-    <div id="jumbotron" class="">
-        <canvas id=c></canvas>
-        <div id="name" class="responsive"></div>
-    </div>  
-
-
-    <section id="about" class="pt-5 pb-5">
-        <div class="sectionTitle">
-                <h1>About Me</h1>
-        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
         <div class="container">
             <div class="row">
-                <article class="col-sm-6 box box-shadow about">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
-                    eu
-                    venenatis diam.
-                    Donec
-                    tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus
-                    fringilla
-                    gravida. Nullam
-                    dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed
-                    efficitur ligula
-                    neque,
-                    vel vehicula risus consequat vel.
-                </article>
-                <article class="col-sm-6 box box-shadow rating">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
-                    eu
-                    venenatis diam.
-                    Donec
-                    tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus
-                    fringilla
-                    gravida. Nullam
-                    dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed
-                    efficitur ligula
-                    neque,
-                    vel vehicula risus consequat vel.
-                </article>
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="animate-text">
+                        <span class="primary-color">Hello, I'm</span>
+                        <span class="hero-name">Jerrell Boone</span>
+                    </h1>
+                    <div class="typewriter">
+                        <span id="typewriter-text"></span><span class="cursor">|</span>
+                    </div>
+                    <div class="mt-5">
+                        <a href="#contact" class="btn btn-primary me-3">Get In Touch</a>
+                        <a href="#projects" class="btn btn-outline">View My Work</a>
+                    </div>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="pt-5 pb-5">
+    <!-- About Section -->
+    <section id="about" class="section-padding">
         <div class="container">
-            <h1>Projects</h1>
-            <div class="row">
-                <article class="col-sm-12 col-lg-6 project-tile">
-                    <img id="sig-gen-snip" src="img/SigGen.PNG" alt="Signature Generator snip">
-                    Here is a small utility used to generate E-mail signatures in the form of Microsoft rich text files, based on the a user's information stored in Active Directory. This email signatures
-                    is used in Email clients such as Microsoft outlook and can be transferred between profiles after its generated
-                </article>
-                <article class="col-sm-12 col-lg-6 project-tile">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget viverra tellus. Donec
-                    eu
-                    venenatis diam.
-                    Donec
-                    tempus sollicitudin ex in facilisis. Nulla consequat nec massa non feugiat. Donec rhoncus
-                    fringilla
-                    gravida. Nullam
-                    dignissim dolor eu dignissim ullamcorper. Etiam dapibus leo sit amet nibh facilisis laoreet. Sed
-                    efficitur ligula
-                    neque,
-                    vel vehicula risus consequat vel.
-                </article>
-
+            <div class="section-title" data-aos="fade-up">
+                <h2>About Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="about-img">
+                        <img src="img/jerrell-mayfair.png" alt="Jerrell Boone" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="about-content">
+                        <h3>Software Engineer & Web Developer</h3>
+                        <p>I'm a passionate software engineer with expertise in building modern web applications. With a strong foundation in both frontend and backend technologies, I create efficient, elegant solutions to complex problems.</p>
+                        <p>My journey in technology began with a curiosity about how things work, which evolved into a career dedicated to crafting exceptional digital experiences. I'm constantly learning new technologies and methodologies to stay at the forefront of this rapidly evolving field.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="pt-5 pb-5">
-        <div class="">
-            <div class="">
-                <h1>Contact</h1>
-                <form action="" name="contact-form" method="POST" netlify-honeypot="bot-field" target="" class="col-lg-6" data-netlify="true">
-                    <ul class="flex-outer">
-                        <li>
-                            <label for="Name">
-                                First Name
-                            </label>
-                            <input type="text" name="first-name">
-                        </li>
-                        <li>
-                            <label for="Name">
-                                Last Name
-                            </label>
-                            <input type="text" name="last-name">
-                        </li>
-                        <li>
-                            <label for="Name">
-                                Email Address
-                            </label>
-                            <input type="email" name="email">
-                        </li>
-                        <li>
-                            <label for="Message">
-                                Message
-                            </label>
-                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                        </li>
-                        <li>
-                            <button type="submit" id="submit">Submit</button>
-                        </li>
-                    </ul>
-                </form>
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Skills</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <ul class="skill-list">
+                            <li><span>HTML5 & CSS3</span></li>
+                            <li><span>JavaScript (ES6+)</span></li>
+                            <li><span>React.js</span></li>
+                            <li><span>Vue.js</span></li>
+                            <li><span>Responsive Design</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <ul class="skill-list">
+                            <li><span>Node.js</span></li>
+                            <li><span>Express</span></li>
+                            <li><span>Python</span></li>
+                            <li><span>Java</span></li>
+                            <li><span>RESTful APIs</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database & DevOps</h3>
+                        <ul class="skill-list">
+                            <li><span>MongoDB</span></li>
+                            <li><span>PostgreSQL</span></li>
+                            <li><span>Git & GitHub</span></li>
+                            <li><span>Docker</span></li>
+                            <li><span>CI/CD Pipelines</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Projects</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/SigGen.PNG" alt="Signature Generator" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h3>Email Signature Generator</h3>
+                            <p>A utility that generates email signatures in Microsoft rich text format based on user information stored in Active Directory.</p>
+                            <div class="tech-stack">
+                                <span>JavaScript</span>
+                                <span>Active Directory</span>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-project"><i class="fab fa-github"></i> Code</a>
+                                <a href="#" class="btn-project"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/jbcamerablur.jpg" alt="Project 2" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h3>Modern Web Application</h3>
+                            <p>A full-stack web application with user authentication, data visualization, and real-time updates.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-project"><i class="fab fa-github"></i> Code</a>
+                                <a href="#" class="btn-project"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/camera.jpg" alt="Project 3" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h3>Photography Portfolio</h3>
+                            <p>A responsive photography portfolio with image optimization and lazy loading for optimal performance.</p>
+                            <div class="tech-stack">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-project"><i class="fab fa-github"></i> Code</a>
+                                <a href="#" class="btn-project"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="#" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Get In Touch</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@jerrellboone.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>San Francisco, CA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-share-alt"></i>
+                            <div>
+                                <h4>Social Profiles</h4>
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="contact-form-container">
+                        <form class="contact-form" name="contact-form" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="first-name" class="form-control" placeholder="First Name" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="last-name" class="form-control" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="row">
-                <div>
-                    Copyright Jerrell Boone
+                <div class="col-lg-12 text-center">
+                    <div class="footer-logo">
+                        <img src="img/personal logo/jaybee-logov2.png" alt="JB Logo" class="logo-img-sm">
+                        <span>Jerrell Boone</span>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p class="copyright">&copy; <span id="current-year"></span> Jerrell Boone. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- <div class="social-media-links">
-            <a href="#" class="fa fa-linkedin"></a>
-            <a href="#" class="fa fa-instagram"></a>
-        </div> -->
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></a>
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/jumbotron-background/livebackground.js"></script>
-
-    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
