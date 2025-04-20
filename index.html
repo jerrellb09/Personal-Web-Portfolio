@@ -283,7 +283,7 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="contact-form-container">
-                        <form class="contact-form" name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <form class="contact-form" name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return false;">
                             <input type="hidden" name="form-name" value="contact-form" />
                             <div class="hidden" style="display:none;">
                                 <input name="bot-field">
@@ -338,6 +338,16 @@
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></a>
+    
+    <!-- Hidden form for Netlify -->
+    <form name="contact-form" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="first-name" />
+        <input type="text" name="last-name" />
+        <input type="email" name="email" />
+        <input type="text" name="subject" />
+        <textarea name="message"></textarea>
+        <input type="checkbox" name="consent" />
+    </form>
 
     <!-- Toast Message for Form Success -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">

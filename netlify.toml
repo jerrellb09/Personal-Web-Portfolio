@@ -5,7 +5,6 @@
 [forms]
   [forms.contact-form]
     name = "contact-form"
-    success_url = "/?form-submission=success#contact"
 
 # Redirect to index for 404 errors
 [[redirects]]

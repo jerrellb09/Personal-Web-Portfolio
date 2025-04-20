@@ -335,35 +335,62 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 1500);
             } else {
                 // Production environment - Use fetch to submit the form to Netlify
-                const formData = new FormData(form);
-                
-                fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString()
-                })
-                .then(response => {
-                    if (response.ok) {
-                        submitButton.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
+                try {
+                    const formData = new FormData(form);
+                    
+                    // Add form-name explicitly (important for Netlify)
+                    formData.append("form-name", "contact-form");
+                    
+                    // Convert FormData to URL-encoded string
+                    const searchParams = new URLSearchParams();
+                    for (const pair of formData) {
+                        searchParams.append(pair[0], pair[1]);
+                    }
+                    
+                    // Log the form data for debugging
+                    console.log("Submitting form with data:", searchParams.toString());
+                    
+                    // Send the form data to Netlify
+                    fetch("/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: searchParams.toString()
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            submitButton.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
+                            
+                            // Show success toast
+                            showSuccessToast();
+                            
+                            // Reset form after delay
+                            setTimeout(() => {
+                                submitButton.disabled = false;
+                                submitButton.textContent = originalText;
+                                contactForm.reset();
+                            }, 2000);
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error submitting form:', error);
+                        submitButton.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>Error!';
                         
-                        // Show success toast
-                        showSuccessToast();
+                        // Show error toast
+                        showErrorToast();
                         
-                        // Reset form after delay
+                        // Reset button after delay
                         setTimeout(() => {
                             submitButton.disabled = false;
                             submitButton.textContent = originalText;
-                            contactForm.reset();
                         }, 2000);
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error submitting form:', error);
+                    });
+                } catch (error) {
+                    console.error('Form submission error:', error);
                     submitButton.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>Error!';
-                    
-                    // Show error toast
                     showErrorToast();
                     
                     // Reset button after delay
@@ -371,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         submitButton.disabled = false;
                         submitButton.textContent = originalText;
                     }, 2000);
-                });
+                }
             }
         });
         
