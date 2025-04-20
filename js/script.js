@@ -1,93 +1,111 @@
-// Particles.js config for background animation
+// Main JavaScript file
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize particles.js
+    // Initialize particles.js with lava lamp effect
     if (document.getElementById('particles-js')) {
-        particlesJS('particles-js', 'js/particles.json');
-        /* Fallback configuration if JSON loading fails
+        // Direct configuration instead of loading from file
         particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 900
                     }
                 },
-                color: {
-                    value: "#ffffff"
+                "color": {
+                    "value": ["#ff00cc", "#33ccff", "#00ff9f", "#ffcc00", "#ff6d6d"]
                 },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
                     }
                 },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 2,
-                        size_min: 0.1,
-                        sync: false
+                "opacity": {
+                    "value": 0.6,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 0.5,
+                        "opacity_min": 0.2,
+                        "sync": false
                     }
                 },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.4,
-                    width: 1
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "size_min": 1,
+                        "sync": false
+                    }
                 },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "grab"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.2,
+                    "width": 1
                 },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    push: {
-                        particles_nb: 4
+                "move": {
+                    "enable": true,
+                    "speed": 1.2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "bounce",
+                    "bounce": true,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
                     }
                 }
             },
-            retina_detect: true
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "bubble": {
+                        "distance": 200,
+                        "size": 7,
+                        "duration": 2,
+                        "opacity": 0.8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    }
+                }
+            },
+            "retina_detect": true
         });
-        */
+        
+        // Add lava lamp color shifting effect
+        setTimeout(() => {
+            const canvas = document.querySelector('#particles-js canvas');
+            if (canvas) {
+                // Color shift animation
+                let hueRotate = 0;
+                setInterval(() => {
+                    hueRotate = (hueRotate + 1) % 360;
+                    canvas.style.filter = `hue-rotate(${hueRotate}deg)`;
+                }, 100);
+            }
+        }, 500); // Wait for canvas to be created
     }
 
     // Initialize AOS (Animate on Scroll)
@@ -184,29 +202,73 @@ document.addEventListener('DOMContentLoaded', function () {
     // Current year for copyright in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Form submission with animation
+    // Form submission with animation and toast notification
     const contactForm = document.querySelector('.contact-form');
     
     if (contactForm) {
+        // Check if we came from a form submission (using URL parameters)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('form-submission') === 'success') {
+            // Show success toast
+            const toast = new bootstrap.Toast(document.getElementById('formSuccessToast'));
+            toast.show();
+            
+            // Remove the query parameter from URL without refreshing page
+            const newUrl = window.location.pathname + window.location.hash;
+            window.history.replaceState({}, document.title, newUrl);
+            
+            // Scroll to contact if we're not already there
+            if (!window.location.hash.includes('contact')) {
+                document.getElementById('contact').scrollIntoView();
+            }
+        }
+        
+        // For local viewing - demo button to show toast
+        const demoToastButton = document.createElement('button');
+        demoToastButton.textContent = 'Demo Toast';
+        demoToastButton.classList.add('btn', 'btn-sm', 'btn-secondary', 'position-fixed', 'top-0', 'end-0', 'm-3');
+        demoToastButton.style.zIndex = '9999';
+        demoToastButton.style.opacity = '0.7';
+        demoToastButton.addEventListener('click', function() {
+            const toast = new bootstrap.Toast(document.getElementById('formSuccessToast'));
+            toast.show();
+        });
+        
+        // Only show demo button in local environment
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+            document.body.appendChild(demoToastButton);
+        }
+        
         contactForm.addEventListener('submit', function(e) {
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             
             submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
+            submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
             
-            // The actual form submission is handled by Netlify
-            // This is just for visual feedback
-            
-            setTimeout(() => {
-                submitButton.textContent = 'Message Sent!';
+            // Local environment form submission demo
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+                e.preventDefault(); // Prevent actual submission
+                
+                // Simulate form submission
                 setTimeout(() => {
-                    submitButton.textContent = originalText;
-                    submitButton.disabled = false;
-                }, 2000);
-            }, 1500);
+                    submitButton.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
+                    
+                    // Show success toast
+                    const toast = new bootstrap.Toast(document.getElementById('formSuccessToast'));
+                    toast.show();
+                    
+                    // Reset form after delay
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalText;
+                        contactForm.reset();
+                    }, 2000);
+                }, 1500);
+            }
             
-            // Don't prevent default as we want the form to actually submit
+            // When deployed to Netlify, the actual form submission is handled by Netlify
+            // The code above is just for local testing
         });
     }
 });
