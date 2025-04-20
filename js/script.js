@@ -209,18 +209,85 @@ document.addEventListener('DOMContentLoaded', function () {
         // Check if we came from a form submission (using URL parameters)
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('form-submission') === 'success') {
-            // Show success toast
-            const toast = new bootstrap.Toast(document.getElementById('formSuccessToast'));
-            toast.show();
+            console.log('Form submission success detected!');
             
-            // Remove the query parameter from URL without refreshing page
-            const newUrl = window.location.pathname + window.location.hash;
-            window.history.replaceState({}, document.title, newUrl);
-            
-            // Scroll to contact if we're not already there
-            if (!window.location.hash.includes('contact')) {
-                document.getElementById('contact').scrollIntoView();
-            }
+            // Small delay to ensure Toast is ready
+            setTimeout(() => {
+                try {
+                    // Show success toast
+                    const toastElement = document.getElementById('formSuccessToast');
+                    
+                    // If toast element doesn't exist, create it programmatically
+                    if (!toastElement) {
+                        console.log('Toast element not found, creating one programmatically');
+                        
+                        // Create toast container if it doesn't exist
+                        let toastContainer = document.querySelector('.toast-container');
+                        if (!toastContainer) {
+                            toastContainer = document.createElement('div');
+                            toastContainer.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+                            document.body.appendChild(toastContainer);
+                        }
+                        
+                        // Create toast element
+                        const newToastElement = document.createElement('div');
+                        newToastElement.id = 'formSuccessToast';
+                        newToastElement.className = 'toast';
+                        newToastElement.setAttribute('role', 'alert');
+                        newToastElement.setAttribute('aria-live', 'assertive');
+                        newToastElement.setAttribute('aria-atomic', 'true');
+                        newToastElement.setAttribute('data-bs-delay', '5000');
+                        
+                        // Toast header
+                        const toastHeader = document.createElement('div');
+                        toastHeader.className = 'toast-header bg-success text-white';
+                        toastHeader.innerHTML = `
+                            <i class="fas fa-check-circle me-2"></i>
+                            <strong class="me-auto">Success!</strong>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                        `;
+                        
+                        // Toast body
+                        const toastBody = document.createElement('div');
+                        toastBody.className = 'toast-body';
+                        toastBody.innerHTML = `
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-envelope-open-text me-3 fs-4 text-success"></i>
+                                <div>Your message has been sent successfully. I'll get back to you soon!</div>
+                            </div>
+                        `;
+                        
+                        // Assemble toast
+                        newToastElement.appendChild(toastHeader);
+                        newToastElement.appendChild(toastBody);
+                        toastContainer.appendChild(newToastElement);
+                        
+                        // Use the new element
+                        const toast = new bootstrap.Toast(newToastElement);
+                        console.log('Toast programmatically created and initialized, showing now...');
+                        toast.show();
+                    } else {
+                        console.log('Toast element found:', toastElement);
+                        const toast = new bootstrap.Toast(toastElement);
+                        console.log('Toast initialized, showing now...');
+                        toast.show();
+                    }
+                    console.log('Toast show method called');
+                } catch (error) {
+                    console.error('Error showing toast:', error);
+                    // Fallback: alert
+                    alert('Your message has been sent successfully! Thank you for reaching out.');
+                }
+                
+                // Remove the query parameter from URL without refreshing page
+                const newUrl = window.location.pathname + window.location.hash;
+                window.history.replaceState({}, document.title, newUrl);
+                
+                // Scroll to contact if we're not already there
+                if (!window.location.hash.includes('contact')) {
+                    document.getElementById('contact').scrollIntoView();
+                }
+            }, 500);
         }
         
         // For local viewing - demo button to show toast
@@ -240,23 +307,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from submitting normally
+            
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
+            const form = this;
             
+            // Update button state
             submitButton.disabled = true;
             submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
             
             // Local environment form submission demo
             if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-                e.preventDefault(); // Prevent actual submission
-                
                 // Simulate form submission
                 setTimeout(() => {
                     submitButton.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
                     
                     // Show success toast
-                    const toast = new bootstrap.Toast(document.getElementById('formSuccessToast'));
-                    toast.show();
+                    showSuccessToast();
                     
                     // Reset form after delay
                     setTimeout(() => {
@@ -265,10 +333,165 @@ document.addEventListener('DOMContentLoaded', function () {
                         contactForm.reset();
                     }, 2000);
                 }, 1500);
+            } else {
+                // Production environment - Use fetch to submit the form to Netlify
+                const formData = new FormData(form);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(response => {
+                    if (response.ok) {
+                        submitButton.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
+                        
+                        // Show success toast
+                        showSuccessToast();
+                        
+                        // Reset form after delay
+                        setTimeout(() => {
+                            submitButton.disabled = false;
+                            submitButton.textContent = originalText;
+                            contactForm.reset();
+                        }, 2000);
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error submitting form:', error);
+                    submitButton.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>Error!';
+                    
+                    // Show error toast
+                    showErrorToast();
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalText;
+                    }, 2000);
+                });
             }
-            
-            // When deployed to Netlify, the actual form submission is handled by Netlify
-            // The code above is just for local testing
         });
+        
+        // Function to show success toast
+        function showSuccessToast() {
+            try {
+                // Show success toast
+                const toastElement = document.getElementById('formSuccessToast');
+                
+                // If toast element doesn't exist, create it programmatically
+                if (!toastElement) {
+                    console.log('Toast element not found, creating one programmatically');
+                    
+                    // Create toast container if it doesn't exist
+                    let toastContainer = document.querySelector('.toast-container');
+                    if (!toastContainer) {
+                        toastContainer = document.createElement('div');
+                        toastContainer.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+                        document.body.appendChild(toastContainer);
+                    }
+                    
+                    // Create toast element
+                    const newToastElement = document.createElement('div');
+                    newToastElement.id = 'formSuccessToast';
+                    newToastElement.className = 'toast';
+                    newToastElement.setAttribute('role', 'alert');
+                    newToastElement.setAttribute('aria-live', 'assertive');
+                    newToastElement.setAttribute('aria-atomic', 'true');
+                    newToastElement.setAttribute('data-bs-delay', '5000');
+                    
+                    // Toast header
+                    const toastHeader = document.createElement('div');
+                    toastHeader.className = 'toast-header bg-success text-white';
+                    toastHeader.innerHTML = `
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong class="me-auto">Success!</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    `;
+                    
+                    // Toast body
+                    const toastBody = document.createElement('div');
+                    toastBody.className = 'toast-body';
+                    toastBody.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-envelope-open-text me-3 fs-4 text-success"></i>
+                            <div>Your message has been sent successfully. I'll get back to you soon!</div>
+                        </div>
+                    `;
+                    
+                    // Assemble toast
+                    newToastElement.appendChild(toastHeader);
+                    newToastElement.appendChild(toastBody);
+                    toastContainer.appendChild(newToastElement);
+                    
+                    // Use the new element
+                    const toast = new bootstrap.Toast(newToastElement);
+                    toast.show();
+                } else {
+                    const toast = new bootstrap.Toast(toastElement);
+                    toast.show();
+                }
+            } catch (error) {
+                console.error('Error showing toast:', error);
+                // Fallback: alert
+                alert('Your message has been sent successfully! Thank you for reaching out.');
+            }
+        }
+        
+        // Function to show error toast
+        function showErrorToast() {
+            try {
+                // Create toast container if it doesn't exist
+                let toastContainer = document.querySelector('.toast-container');
+                if (!toastContainer) {
+                    toastContainer = document.createElement('div');
+                    toastContainer.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+                    document.body.appendChild(toastContainer);
+                }
+                
+                // Create toast element
+                const errorToastElement = document.createElement('div');
+                errorToastElement.id = 'formErrorToast';
+                errorToastElement.className = 'toast';
+                errorToastElement.setAttribute('role', 'alert');
+                errorToastElement.setAttribute('aria-live', 'assertive');
+                errorToastElement.setAttribute('aria-atomic', 'true');
+                errorToastElement.setAttribute('data-bs-delay', '5000');
+                
+                // Toast header
+                const toastHeader = document.createElement('div');
+                toastHeader.className = 'toast-header bg-danger text-white';
+                toastHeader.innerHTML = `
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    <strong class="me-auto">Error</strong>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                `;
+                
+                // Toast body
+                const toastBody = document.createElement('div');
+                toastBody.className = 'toast-body';
+                toastBody.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-times-circle me-3 fs-4 text-danger"></i>
+                        <div>There was an error sending your message. Please try again later.</div>
+                    </div>
+                `;
+                
+                // Assemble toast
+                errorToastElement.appendChild(toastHeader);
+                errorToastElement.appendChild(toastBody);
+                toastContainer.appendChild(errorToastElement);
+                
+                // Show toast
+                const toast = new bootstrap.Toast(errorToastElement);
+                toast.show();
+            } catch (error) {
+                console.error('Error showing error toast:', error);
+                // Fallback: alert
+                alert('There was an error sending your message. Please try again later.');
+            }
+        }
     }
 });
