@@ -550,6 +550,13 @@ img {
     transition: var(--transition);
 }
 
+/* Special styling for the FinMan logo to ensure it fits completely */
+.project-img img[src*="fin-man-logo-main.jpeg"] {
+    object-fit: contain;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
 .project-card:hover .project-img img {
     transform: scale(1.1);
 }
