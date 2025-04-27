@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#f0f8ff" />
+  <rect x="50" y="50" width="500" height="300" rx="10" fill="#ffffff" stroke="#ccc" stroke-width="2" />
+  
+  <!-- Header -->
+  <rect x="50" y="50" width="500" height="50" rx="10" fill="#007bff" />
+  <text x="75" y="82" font-family="Arial" font-size="18" fill="white">Realtime Chat App</text>
+  
+  <!-- Chat messages -->
+  <g transform="translate(70, 120)">
+    <!-- Message 1 -->
+    <rect x="0" y="0" width="240" height="40" rx="18" fill="#e6f7ff" stroke="#ccc" stroke-width="1" />
+    <text x="15" y="25" font-family="Arial" font-size="14" fill="#333">Hey there! How are you?</text>
+    
+    <!-- Message 2 -->
+    <rect x="220" y="50" width="240" height="40" rx="18" fill="#f0f0f0" stroke="#ccc" stroke-width="1" />
+    <text x="235" y="75" font-family="Arial" font-size="14" fill="#333">I'm doing great! How about you?</text>
+    
+    <!-- Message 3 -->
+    <rect x="0" y="100" width="280" height="40" rx="18" fill="#e6f7ff" stroke="#ccc" stroke-width="1" />
+    <text x="15" y="125" font-family="Arial" font-size="14" fill="#333">Good! Working on this chat app...</text>
+    
+    <!-- Typing indicator -->
+    <rect x="220" y="150" width="100" height="30" rx="15" fill="#f0f8ff" stroke="#ccc" stroke-width="1" />
+    <text x="235" y="170" font-family="Arial" font-size="12" fill="#007bff">typing...</text>
+  </g>
+  
+  <!-- Input box -->
+  <rect x="70" y="310" width="400" height="40" rx="20" fill="#ffffff" stroke="#ccc" stroke-width="2" />
+  <text x="95" y="335" font-family="Arial" font-size="14" fill="#999">Type a message...</text>
+  
+  <!-- Send button -->
+  <circle cx="500" cy="330" r="20" fill="#007bff" />
+  <path d="M490,330 L510,330 M500,320 L510,330 L500,340" stroke="white" stroke-width="2" fill="none" />
+</svg>
